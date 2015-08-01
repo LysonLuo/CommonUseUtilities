@@ -31,3 +31,5 @@ proguard/
 /.idea/misc.xml
 /.idea/modules.xml
 /app/app.iml
+.idea/runConfigurations.xml
+CommonUseUtilities.iml

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--https://developer.android.com/training/material/theme.html 参考了哈-->
+    <color name="colorPrimary">#2196F3</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#1976D2</color>
+    <color name="windowBackGround">@color/textColorPrimary</color>
+    <color name="navigationBarColor">#000000</color>
+
+    <!--toolbar背景-->
+    <color name="toolbar_bg">@color/colorPrimary</color>
+    <!--toolbar滚动条背景-->
+    <color name="tab_indicator_color">#455A64</color>
+    <!--状态栏背景-->
+    <color name="statusbar_bg">@color/colorPrimaryDark</color>
+</resources>

@@ -1,8 +1,19 @@
 <resources>
 
-    <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
+    </style>
+
+    <!--http://www.google.com/design/spec/style/color.html#color-color-palette  可以参考了哈-->
+    <style name="ToolBarTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!--toolbar背景色-->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <!--标题字体颜色-->
+        <item name="android:textColorPrimary">@color/textColorPrimary</item>
+        <!--菜单(字体/按钮)颜色-->
+        <item name="android:textColorSecondary">@color/textColorPrimary</item>
+        <!--菜单(字体/按钮)颜色-->
+        <item name="actionMenuTextColor">@color/textColorPrimary</item>
     </style>
 
 </resources>

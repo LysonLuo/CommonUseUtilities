@@ -17,8 +17,8 @@ import util.use.common.commonuseutilities.R;
  */
 public class RetryFragment extends BaseFragment {
     @InjectView(R.id.textview_retry)
-    private TextView retryTextView;
-    private OnRetryListener retryListener;
+    TextView retryTextView;
+    OnRetryListener retryListener;
 
     @Nullable
     @Override
@@ -31,6 +31,7 @@ public class RetryFragment extends BaseFragment {
             public void onClick(View v) {
                 if (retryListener != null) {
                     retryListener.onRetry();
+                    //点击重试之后移除当前页面
                     getFragmentManager().beginTransaction().remove(RetryFragment.this).commit();
                 }
             }

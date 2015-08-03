@@ -16,8 +16,8 @@ import util.use.common.commonuseutilities.R;
  */
 public class NoDataFragment extends BaseFragment {
     @InjectView(R.id.textview_nodata)
-    private TextView noDataTextView;
-    private String noDataText;
+    TextView noDataTextView;
+    String noDataText;
 
     @Nullable
     @Override

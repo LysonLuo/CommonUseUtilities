@@ -1,7 +1,22 @@
 <resources>
 
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="AppTheme.Base">
         <!-- Customize your theme here. -->
+    </style>
+    <!--对比前一个包的Theme.AppCompat.Light，这里要改过来-->
+    <style name="AppTheme.Base" parent="Theme.AppCompat.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+
+        <!-- toolbar背景色 -->
+        <item name="colorPrimary">@color/toolbar_bg</item>
+        <!-- 状态栏颜色 -->
+        <item name="colorPrimaryDark">@color/statusbar_bg</item>
+        <item name="android:windowBackground">@color/windowbackground</item>
+
+        <!-- tint color -->
+        <item name="colorAccent">@color/toolbar_bg</item>
+
     </style>
 
     <!--http://www.google.com/design/spec/style/color.html#color-color-palette  可以参考了哈-->

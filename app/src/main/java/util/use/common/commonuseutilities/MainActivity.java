@@ -5,6 +5,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import util.use.common.commonuseutilities.base.BaseActivity;
+import util.use.common.commonuseutilities.base.ToolbarSetter;
 
 
 public class MainActivity extends BaseActivity {
@@ -13,6 +14,7 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ToolbarSetter.setupMainToolbar(this, getToolBar());
     }
 
     @Override

@@ -4,7 +4,7 @@
     <color name="colorPrimary">#2196F3</color>
     <color name="textColorPrimary">#FFFFFF</color>
     <color name="colorPrimaryDark">#1976D2</color>
-    <color name="windowBackGround">@color/textColorPrimary</color>
+    <color name="windowbackground">@color/textColorPrimary</color>
     <color name="navigationBarColor">#000000</color>
 
     <!--toolbar背景-->

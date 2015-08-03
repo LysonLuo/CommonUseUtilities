@@ -61,10 +61,12 @@ public class BaseActivity extends AppCompatActivity {
 
     @Override
     public void setContentView(View view, ViewGroup.LayoutParams params) {
-        super.setContentView(view, params);
         FrameLayout container = new FrameLayout(this);
         container.setLayoutParams(new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         container.setId(R.id.content_layout_id);
+        if (view.getParent() != null){
+            ((ViewGroup)view.getParent()).removeView(view);
+        }
         container.addView(view, params);
 
         RelativeLayout topLevelLayout = null;
@@ -97,17 +99,17 @@ public class BaseActivity extends AppCompatActivity {
         super.setContentView(isShowToolbar ? topLevelLayout : container);
     }
 
-    /**
-     * 不重写会怎么样呢，试试哈
-     * //     * @param view
-     * //     * @param params
-     */
+//    /**
+//     * 不重写会怎么样呢，试试哈，好像什么事也没有
+//     * //     * @param view
+//     * //     * @param params
+//     */
 //    @Override
 //    public void addContentView(View view, ViewGroup.LayoutParams params) {
 //        super.addContentView(view, params);
 //        ((ViewGroup) (getContentView().getChildAt(0))).addView(view, params);
 //    }
-
+//
 //    /**
 //     * 获取不包含Toolbar的View，即通过setContentView(int layoutResID)设置的View, 外面套一个FrameLayout
 //     * @return

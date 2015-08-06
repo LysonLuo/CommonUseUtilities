@@ -13,4 +13,9 @@
     <color name="tab_indicator_color">#455A64</color>
     <!--状态栏背景-->
     <color name="statusbar_bg">@color/colorPrimaryDark</color>
+
+    <!--主题颜色-->
+    <color name="common_background">#FFFFFF</color>
+    <color name="common_theme_color">#000000</color>
+
 </resources>

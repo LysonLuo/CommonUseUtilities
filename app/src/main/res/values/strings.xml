@@ -1,8 +1,7 @@
 <resources>
-    <string name="app_name">CommonUseUtilities</string>
+    <string name="app_name">CommonUtils</string>
 
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="common_template">常用模板程序</string>
 
     <string name="common_loading_text">正在加载</string>
     <string name="common_retry_text">加载失败，点击重试</string>

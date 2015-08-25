@@ -1,10 +1,11 @@
-package util.use.common.commonuseutilities.base;
+package util.use.common.base;
 
 import android.content.Context;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-import util.use.common.commonuseutilities.R;
+import util.use.common.R;
+
 
 /**
  * ToolBar设置
@@ -32,10 +33,9 @@ public class ToolbarSetter {
     /**
      * 设置MainActivity的Toolbar
      *
-     * @param context
      * @param toolbar
      */
-    public static void setupMainToolbar(final Context context, Toolbar toolbar) {
+    public static void setupMainToolbar(Toolbar toolbar) {
         toolbar.setNavigationIcon(R.mipmap.ic_launcher);
         toolbar.setNavigationOnClickListener(null);
     }

@@ -1,4 +1,4 @@
-package util.use.common.commonuseutilities.base;
+package util.use.common.base;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -6,7 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import util.use.common.commonuseutilities.R;
+import util.use.common.R;
+
 
 /**
  * 显示加载进度的页面

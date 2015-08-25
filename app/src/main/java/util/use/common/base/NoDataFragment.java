@@ -1,4 +1,4 @@
-package util.use.common.commonuseutilities.base;
+package util.use.common.base;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import butterknife.InjectView;
-import util.use.common.commonuseutilities.R;
+import util.use.common.R;
 
 /**
  * 没有数据的时候显示的页面
@@ -16,22 +16,22 @@ import util.use.common.commonuseutilities.R;
  */
 public class NoDataFragment extends BaseFragment {
     @InjectView(R.id.textview_nodata)
-    TextView noDataTextView;
-    String noDataText;
+    TextView mNoDataTextView;
+    private String mNoDataText;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_nodata, container, false);
 
-        noDataTextView.setText(noDataText);
+        mNoDataTextView.setText(mNoDataText);
         return view;
     }
 
     public void setText(String text) {
-        this.noDataText = text;
-        if (noDataTextView != null) {
-            noDataTextView.setText(text);
+        this.mNoDataText = text;
+        if (mNoDataTextView != null) {
+            mNoDataTextView.setText(text);
         }
     }
 }

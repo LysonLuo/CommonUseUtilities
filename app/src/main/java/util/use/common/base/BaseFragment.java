@@ -1,4 +1,4 @@
-package util.use.common.commonuseutilities.base;
+package util.use.common.base;
 
 import android.app.ProgressDialog;
 import android.support.v4.app.Fragment;
@@ -13,16 +13,16 @@ import android.widget.Toast;
 public class BaseFragment extends Fragment {
     private static final String LogTag = BaseActivity.class.getCanonicalName();
     private ProgressDialog mProgressDialog;
-    private ProgressFragment progressFragment;
-    private RetryFragment retryFragment;
-    private NoDataFragment noDataFragment;
+    private ProgressFragment mProgressFragment;
+    private RetryFragment mRetryFragment;
+    private NoDataFragment mNoDataFragment;
 
-    private boolean isFragmentAlive = true;
+    private boolean mIsFragmentAlive = true;
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        isFragmentAlive = false;
+        mIsFragmentAlive = false;
     }
 
     /**
@@ -31,7 +31,7 @@ public class BaseFragment extends Fragment {
      * @param layoutId
      */
     protected void showProgressFragment(int layoutId) {
-        if (!isFragmentAlive) {
+        if (!mIsFragmentAlive) {
             CommonLog.d(LogTag, "fragment is not alive");
             return;
         }
@@ -39,18 +39,18 @@ public class BaseFragment extends Fragment {
             CommonLog.d(LogTag, "activity is not alive");
             return;
         }
-        if (progressFragment == null) {
-            progressFragment = new ProgressFragment();
+        if (mProgressFragment == null) {
+            mProgressFragment = new ProgressFragment();
         }
         FragmentManager fm = getChildFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
-        if (!progressFragment.isAdded()) {
-            ft.add(layoutId, progressFragment);
+        if (!mProgressFragment.isAdded()) {
+            ft.add(layoutId, mProgressFragment);
         }
-        ft.show(progressFragment);
+        ft.show(mProgressFragment);
 
-        if (retryFragment != null && retryFragment.isVisible()) {
-            ft.remove(retryFragment);
+        if (mRetryFragment != null && mRetryFragment.isVisible()) {
+            ft.remove(mRetryFragment);
         }
 
         ft.commitAllowingStateLoss();
@@ -60,7 +60,7 @@ public class BaseFragment extends Fragment {
      * 移除圆形进度条的Fragment
      */
     protected void removeProgressFragment() {
-        if (!isFragmentAlive) {
+        if (!mIsFragmentAlive) {
             CommonLog.d(LogTag, "fragment is not alive");
             return;
         }
@@ -68,14 +68,14 @@ public class BaseFragment extends Fragment {
             CommonLog.d(LogTag, "activity is not alive");
             return;
         }
-        if (progressFragment == null) {
+        if (mProgressFragment == null) {
             return;
         }
         FragmentManager fm = getChildFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
-        ft.remove(progressFragment);
+        ft.remove(mProgressFragment);
         ft.commitAllowingStateLoss();
-        progressFragment = null;
+        mProgressFragment = null;
     }
 
     /**
@@ -83,7 +83,7 @@ public class BaseFragment extends Fragment {
      * 因为在回调方法定义的结尾主动移除了自身，所以不再需要独立的方法去移除
      */
     protected void showRetryFragment(int layoutId, RetryFragment.OnRetryListener listener) {
-        if (!isFragmentAlive) {
+        if (!mIsFragmentAlive) {
             CommonLog.d(LogTag, "fragment is not alive");
             return;
         }
@@ -91,17 +91,17 @@ public class BaseFragment extends Fragment {
             CommonLog.d(LogTag, "activity is not alive");
             return;
         }
-        if (retryFragment == null) {
-            retryFragment = new RetryFragment();
+        if (mRetryFragment == null) {
+            mRetryFragment = new RetryFragment();
         }
         FragmentManager fm = getChildFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
-        if (!retryFragment.isAdded()) {
-            ft.add(layoutId, retryFragment, "");
+        if (!mRetryFragment.isAdded()) {
+            ft.add(layoutId, mRetryFragment, "");
         }
-        ft.show(retryFragment);
+        ft.show(mRetryFragment);
         ft.commitAllowingStateLoss();
-        retryFragment.setOnRetryListener(listener);
+        mRetryFragment.setOnRetryListener(listener);
     }
 
     /**
@@ -110,7 +110,7 @@ public class BaseFragment extends Fragment {
      * @param layouId
      */
     protected void showNoDataFragment(int layouId) {
-        if (!isFragmentAlive) {
+        if (!mIsFragmentAlive) {
             CommonLog.d(LogTag, "fragment is not alive");
             return;
         }
@@ -118,22 +118,22 @@ public class BaseFragment extends Fragment {
             CommonLog.d(LogTag, "activity is not alive");
             return;
         }
-        if (noDataFragment == null) {
-            noDataFragment = new NoDataFragment();
+        if (mNoDataFragment == null) {
+            mNoDataFragment = new NoDataFragment();
         }
         FragmentManager fm = getChildFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
-        if (!noDataFragment.isAdded()) {
-            ft.add(layouId, noDataFragment, "");
+        if (!mNoDataFragment.isAdded()) {
+            ft.add(layouId, mNoDataFragment, "");
         }
-        ft.show(noDataFragment);
+        ft.show(mNoDataFragment);
         ft.commitAllowingStateLoss();
     }
 
     protected void showNoDataFragment(int layouId, String text) {
         showNoDataFragment(layouId);
-        if (noDataFragment != null) {
-            noDataFragment.setText(text);
+        if (mNoDataFragment != null) {
+            mNoDataFragment.setText(text);
         }
     }
 
@@ -141,7 +141,7 @@ public class BaseFragment extends Fragment {
      * 移除没有数据的Fragment
      */
     protected void removeNoDataFragment() {
-        if (!isFragmentAlive) {
+        if (!mIsFragmentAlive) {
             CommonLog.d(LogTag, "fragment is not alive");
             return;
         }
@@ -149,12 +149,12 @@ public class BaseFragment extends Fragment {
             CommonLog.d(LogTag, "activity is not alive");
             return;
         }
-        if (noDataFragment == null) {
+        if (mNoDataFragment == null) {
             return;
         }
         FragmentManager fm = getChildFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
-        ft.remove(noDataFragment);
+        ft.remove(mNoDataFragment);
         ft.commitAllowingStateLoss();
     }
 
@@ -202,6 +202,4 @@ public class BaseFragment extends Fragment {
     protected void showLongToast(String message) {
         Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
     }
-
-
 }

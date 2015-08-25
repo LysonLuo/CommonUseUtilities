@@ -1,4 +1,4 @@
-package util.use.common.commonuseutilities.base;
+package util.use.common.base;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
-import util.use.common.commonuseutilities.R;
+import util.use.common.R;
 
 /**
  * 重试页面，可以点击重新加载
@@ -18,7 +18,7 @@ import util.use.common.commonuseutilities.R;
 public class RetryFragment extends BaseFragment {
     @InjectView(R.id.textview_retry)
     TextView retryTextView;
-    OnRetryListener retryListener;
+    private OnRetryListener mRetryListener;
 
     @Nullable
     @Override
@@ -29,8 +29,8 @@ public class RetryFragment extends BaseFragment {
         retryTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (retryListener != null) {
-                    retryListener.onRetry();
+                if (mRetryListener != null) {
+                    mRetryListener.onRetry();
                     //点击重试之后移除当前页面
                     getFragmentManager().beginTransaction().remove(RetryFragment.this).commit();
                 }
@@ -41,7 +41,7 @@ public class RetryFragment extends BaseFragment {
     }
 
     public void setOnRetryListener(OnRetryListener listener) {
-        retryListener = listener;
+        mRetryListener = listener;
     }
 
 

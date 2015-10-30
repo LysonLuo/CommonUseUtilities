@@ -4,7 +4,6 @@ import android.app.ProgressDialog;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.widget.Toast;
 
 /**
  * 所有Fragment的基类
@@ -191,7 +190,7 @@ public class BaseFragment extends Fragment {
      * @param message
      */
     protected void showShortToast(String message) {
-        Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+        ((BaseActivity)getActivity()).showShortToast(message);
     }
 
     /**
@@ -200,6 +199,6 @@ public class BaseFragment extends Fragment {
      * @param message
      */
     protected void showLongToast(String message) {
-        Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
+        ((BaseActivity)getActivity()).showLongToast(message);
     }
 }

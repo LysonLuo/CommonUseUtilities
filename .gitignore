@@ -30,6 +30,7 @@ proguard/
 /.idea/gradle.xml
 /.idea/misc.xml
 /.idea/modules.xml
-/app/app.iml
+/BaseMoudle/app.iml
 .idea/runConfigurations.xml
 CommonUseUtilities.iml
+gradle.properties

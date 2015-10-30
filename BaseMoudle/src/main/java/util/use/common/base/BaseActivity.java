@@ -1,7 +1,6 @@
 package util.use.common.base;
 
 import android.app.ProgressDialog;
-import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -35,16 +34,6 @@ public class BaseActivity extends AppCompatActivity {
     private boolean mIsActivityAlive = true;
     private boolean mIsShowToolbar = true;
     private int mToolbarPosition = TOOLBAR_POSITION_TOP;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-    }
 
     @Override
     public void setContentView(int layoutResID) {
@@ -97,16 +86,6 @@ public class BaseActivity extends AppCompatActivity {
             }
         }
         super.setContentView(mIsShowToolbar ? topLevelLayout : container);
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
     }
 
     /**
